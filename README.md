@@ -14,9 +14,9 @@ consistent design for Alchemy Open-Source project documentation;
 
 ##Todo
 
-[ ] Generate the documentation (write the doc to the directory, default is *docs*)
-[ ] Enable the force option (force doc generation - overwrite - on the directory)
-[ ] Enable the update option (update the doc - only overwrite base files)
+ - [ ] Generate the documentation (write the doc to the directory, default is *docs*)
+ - [ ] Enable the force option (force doc generation - overwrite - on the directory)
+ - [ ] Enable the update option (update the doc - only overwrite base files)
 
 The base files are all, except :
  - source/local_conf.py
