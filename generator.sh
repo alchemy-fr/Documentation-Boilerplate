@@ -75,18 +75,24 @@ then
 		cp -rf boilerplate/* $DEST
 	else
 		echo "$DEST is not empty"
-		echo "Use --force to crash data or --update to update files"
+		echo "Use --force to override data or --update to update files"
 		exit 1
 	fi
 elif [ $FORCE -eq 0 ] && [ $UPDATE -eq 1 ]
 then
-        rsync -vrq --stats \
-            --exclude='boilerplate/source/local_conf.py' \
-            --exclude='boilerplate/_themes/static/main.css' \
-            --exclude='boilerplate/source/index.rst' \
+        rsync -vrq \
+            --exclude='source/local_conf.py' \
+            --exclude='source/_themes/Alchemy/static/main.css' \
+            --exclude='source/index.rst' \
             boilerplate/* $DEST
 
 elif [ $FORCE -eq 1 ]
 then
 	cp -rf boilerplate/* $DEST
+fi
+
+if [ $? -gt 0 ]; then
+    echo "Error while executing command !"
+else
+    echo "Success !"
 fi
