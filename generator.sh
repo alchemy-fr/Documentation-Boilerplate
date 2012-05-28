@@ -80,8 +80,12 @@ then
 	fi
 elif [ $FORCE -eq 0 ] && [ $UPDATE -eq 1 ]
 then
-	cp -rf boilerplate/_themes/static/main.js $DEST/_themes/static/main.js
-	cp -rf boilerplate/source/local_conf.py $DEST/source/local_conf.py
+        rsync -vrq --stats \
+            --exclude='boilerplate/source/local_conf.py' \
+            --exclude='boilerplate/_themes/static/main.css' \
+            --exclude='boilerplate/source/index.rst' \
+            boilerplate/* $DEST
+
 elif [ $FORCE -eq 1 ]
 then
 	cp -rf boilerplate/* $DEST
