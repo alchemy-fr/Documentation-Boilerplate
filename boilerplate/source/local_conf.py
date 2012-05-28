@@ -2,9 +2,6 @@
 # project name
 project = u'Project Name'
 
-#github repository URL
-github_repo = ''
-
 # Tex info conf
 texinfo_documents = [
   ('index', 'Project name', u'Project Documentation',
