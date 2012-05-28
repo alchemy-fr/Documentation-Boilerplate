@@ -82,6 +82,7 @@ elif [ $FORCE -eq 0 ] && [ $UPDATE -eq 1 ]
 then
         rsync -vrq \
             --exclude='source/local_conf.py' \
+            --exclude='source/_themes/Alchemy/ribbon.html' \
             --exclude='source/_themes/Alchemy/static/main.css' \
             --exclude='source/index.rst' \
             boilerplate/* $DEST
